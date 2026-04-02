@@ -13,7 +13,7 @@ const Hero = () => {
             </span>
 
             <h1 className="mt-6 text-5xl font-bold leading-tight text-[#051a37] md:text-6xl">
-              Reliable electrical services for your home
+              Welcome to MPC Electrical Solutions mi Chondy :)
             </h1>
 
             <p className="mt-6 max-w-xl text-lg text-gray-600">
