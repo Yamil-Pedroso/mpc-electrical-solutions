@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#051a37]">
+    <header className="sticky top-0 z-50 bg-[#051a37] overflow-hidden border-b border-[#051a37]">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <a
@@ -68,11 +68,12 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
             setOpen(false);
           }}
+          className="p-8 bg-white flex items-center xl:rounded-full -m-8 duration-300"
         >
           <img
             src={assets.logo}
             alt="MPC Electrical Solutions logo"
-            className="h-16 w-auto"
+            className="w-auto h-36"
           />
         </a>
 
@@ -128,11 +129,13 @@ const Navbar = () => {
           >
             {/* Header */}
             <div className="flex h-20 items-center justify-between px-4">
-              <img
-                src={assets.logo}
-                alt="MPC Electrical Solutions logo"
-                className="h-16 w-auto"
-              />
+              <div className="h-20 p-4 bg-white flex items-center justify-center overflow-hidden">
+                <img
+                  src={assets.logo}
+                  alt="MPC Electrical Solutions logo"
+                  className="h-30 w-auto object-cover"
+                />
+              </div>
 
               <button
                 onClick={() => setOpen(false)}

@@ -1,4 +1,4 @@
-import logo from "./images/logo.png";
+import logo from "./images/Logo.svg";
 
 // Hero
 import micheElectrical from "./images/hero-section/miche-elec.png";
