@@ -1,137 +1,148 @@
-import { motion, type Variants } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { assets } from "@/assets";
 
-const containerVariants: Variants = {
+const heroSlides = [assets.gallery1, assets.gallery2, assets.gallery3];
+
+const contentVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.14,
     },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.75,
       ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
-const imageVariants: Variants = {
-  hidden: { opacity: 0, x: 60, scale: 0.96 },
-  visible: {
+const slideVariants: Variants = {
+  initial: {
+    opacity: 0,
+    scale: 1.05,
+  },
+  animate: {
     opacity: 1,
-    x: 0,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 1.6,
       ease: [0.22, 1, 0.36, 1],
     },
   },
-};
-
-const floatingCircleOne: Variants = {
-  animate: {
-    y: [0, -10, 0],
+  exit: {
+    opacity: 0,
+    scale: 1.02,
     transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const floatingCircleTwo: Variants = {
-  animate: {
-    y: [0, -12, 0],
-    transition: {
-      duration: 4.5,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: 0.3,
+      duration: 1.2,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
-    <section className="overflow-hidden bg-white py-32">
-      <Container>
-        <div className="grid items-center gap-16 md:grid-cols-2">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.span
-              variants={itemVariants}
-              className="inline-block rounded-full bg-red-100 px-4 py-1 text-sm font-semibold text-[#d90f1b]"
-            >
-              Electrical solutions
-            </motion.span>
+    <section className="relative h-[78vh] min-h-[620px] w-full overflow-hidden bg-[#051a37] sm:h-[82vh] lg:h-[85vh]">
+      <div className="absolute inset-0">
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={currentSlide}
+            src={heroSlides[currentSlide]}
+            alt={`Electrical background slide ${currentSlide + 1}`}
+            className="absolute inset-0 h-full w-full object-cover"
+            variants={slideVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          />
+        </AnimatePresence>
 
-            <motion.h1
-              variants={itemVariants}
-              className="mt-6 text-5xl font-bold leading-tight text-[#051a37] md:text-6xl"
-            >
-              Safe. Reliable. Professional.
-            </motion.h1>
+        <div className="absolute inset-0 bg-[#051a37]/46" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#051a37]/58 via-[#051a37]/36 to-[#051a37]/18" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#051a37]/38 via-transparent to-transparent" />
+      </div>
 
-            <motion.p
-              variants={itemVariants}
-              className="mt-6 max-w-xl text-lg text-gray-600"
-            >
-              Professional electrical installations, repairs, and emergency
-              services delivered with safety, reliability, and experience.
-            </motion.p>
-
+      <div className="relative z-10 h-full">
+        <Container>
+          <div className="flex h-[78vh] min-h-[620px] items-center sm:h-[82vh] lg:h-[85vh]">
             <motion.div
-              variants={itemVariants}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              variants={contentVariants}
+              initial="hidden"
+              animate="visible"
+              className="w-full max-w-3xl"
             >
-              <Button>Get in touch</Button>
-              <Button variant="secondary">Call now</Button>
+              <motion.span
+                variants={itemVariants}
+                className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-md"
+              >
+                Electrical solutions
+              </motion.span>
+
+              <motion.h1
+                variants={itemVariants}
+                className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-[90px] lg:leading-[1.2] xl:text-[100px] xl:leading-[1.1]"
+              >
+                Safe. Reliable. Professional.
+              </motion.h1>
+
+              <motion.p
+                variants={itemVariants}
+                className="mt-6 max-w-2xl text-base leading-8 text-white/90 sm:text-lg md:text-xl"
+              >
+                Electrical installations, repairs, and emergency services
+                delivered with safety, reliability, and experience.
+              </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-10 flex flex-col gap-4 sm:flex-row"
+              >
+                <Button>Get in touch</Button>
+                <Button variant="secondary">Call now</Button>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-12 flex items-center gap-3"
+              >
+                {heroSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    aria-label={`Go to slide ${index + 1}`}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      currentSlide === index
+                        ? "w-10 bg-[#da1f27]"
+                        : "w-2.5 bg-white/45 hover:bg-white/70"
+                    }`}
+                  />
+                ))}
+              </motion.div>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={imageVariants}
-            initial="hidden"
-            animate="visible"
-            className="relative"
-          >
-            <div className="overflow-hidden rounded-3xl shadow-lg">
-              <motion.img
-                src={assets.micheElectrical}
-                alt="Professional electrician working in a Canadian home"
-                className="h-full w-full object-cover"
-                initial={{ scale: 1.08 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              />
-            </div>
-
-            <motion.div
-              variants={floatingCircleOne}
-              animate="animate"
-              className="absolute -bottom-6 -right-6 h-28 w-28 rounded-full bg-[#d90f1b]/20"
-            />
-
-            <motion.div
-              variants={floatingCircleTwo}
-              animate="animate"
-              className="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-[#023962]/20"
-            />
-          </motion.div>
-        </div>
-      </Container>
+          </div>
+        </Container>
+      </div>
     </section>
   );
 };

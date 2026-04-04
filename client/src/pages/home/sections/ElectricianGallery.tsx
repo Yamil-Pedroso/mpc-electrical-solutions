@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { assets } from "@/assets";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 type GalleryItem = {
   id: number;
@@ -58,7 +60,7 @@ function GalleryModal({
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
       <motion.div
-        className="relative w-full max-w-6xl overflow-hidden rounded-[30px] border border-white/10 bg-white/95 shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
+        className="relative w-full max-w-6xl overflow-hidden rounded-[20px bg-white/95 shadow-[0_30px_100px_rgba(0,0,0,0.45)]"
         onClick={(event) => event.stopPropagation()}
         initial={{ opacity: 0, y: 30, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -71,7 +73,7 @@ function GalleryModal({
           aria-label="Close modal"
           className="absolute right-4 top-4 z-20 flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27]"
         >
-          ×
+          <IoClose />
         </button>
 
         <button
@@ -80,7 +82,7 @@ function GalleryModal({
           aria-label="Previous image"
           className="absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#051a37]/10 bg-white/90 text-2xl text-[#051a37] shadow-lg backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] hover:text-white"
         >
-          ←
+          <FaArrowLeft />
         </button>
 
         <button
@@ -89,7 +91,7 @@ function GalleryModal({
           aria-label="Next image"
           className="absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-[#051a37]/10 bg-white/90 text-2xl text-[#051a37] shadow-lg backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] hover:text-white"
         >
-          →
+          <FaArrowRight />
         </button>
 
         <div className="relative bg-[#eef2f7]">
@@ -207,7 +209,7 @@ export default function ElectricianGallery({
   };
 
   return (
-    <section className="bg-white px-0 py-16 sm:py-20">
+    <section id="gallery" className="bg-white px-0 py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px]">
         <motion.div
           className="mb-10 max-w-2xl px-4 sm:px-6 lg:px-8"

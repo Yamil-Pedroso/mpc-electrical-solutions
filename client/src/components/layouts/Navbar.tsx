@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#051a37] overflow-hidden border-b border-[#051a37]">
+    <header className="sticky top-0 z-50 bg-[#ffffff] overflow-hidden border-b border-[#051a37]">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <a
@@ -84,7 +84,7 @@ const Navbar = () => {
               key={item.targetId}
               href={`#${item.targetId}`}
               onClick={(e) => handleScroll(e, item.targetId)}
-              className="text-sm font-medium text-white transition hover:text-[#d90f1b]"
+              className=" font-bold text-black transition hover:text-[#d90f1b]"
             >
               {item.label}
             </a>
