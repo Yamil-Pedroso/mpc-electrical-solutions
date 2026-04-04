@@ -1,7 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import assets from "@/assets";
+import { assets } from "@/assets";
 
 const containerVariants: Variants = {
   hidden: {},

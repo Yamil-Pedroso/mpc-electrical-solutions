@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import assets from "@/assets";
+import { assets } from "@/assets";
 
 const About = () => {
   return (

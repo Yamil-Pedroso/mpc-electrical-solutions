@@ -1,16 +1,18 @@
 import EmergencyCTA from "./sections/EmergencyCTA";
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
-import WhyChooseUs from "./sections/WhyChooseUs";
+import ElectricianGallery from "./sections/ElectricianGallery";
 import About from "./sections/About";
 import ContactCTA from "./sections/ContactCTA";
+import DevelopmentNoticeModal from "@/components/DevelopmentNotificationModal";
 
 const HomePage = () => {
   return (
     <>
+      <DevelopmentNoticeModal />
       <Hero />
       <Services />
-      <WhyChooseUs />
+      <ElectricianGallery />
       <EmergencyCTA />
       <About />
       <ContactCTA />
