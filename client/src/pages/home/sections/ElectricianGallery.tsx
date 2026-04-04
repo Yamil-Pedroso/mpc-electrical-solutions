@@ -254,12 +254,12 @@ export default function ElectricianGallery({
                 <div className="absolute inset-0 bg-gradient-to-t from-[#051a37]/80 via-[#051a37]/20 to-transparent opacity-70 transition duration-500 group-hover:opacity-95" />
                 <div className="absolute inset-0 bg-[#da1f27]/0 transition duration-500 group-hover:bg-[#da1f27]/15" />
 
-                <div className="absolute inset-0 flex items-end justify-between p-4 sm:p-5">
+                <div className="absolute inset-0 flex items-end justify-between p-6 sm:p-8">
                   <div className="translate-y-4 transition duration-500 group-hover:translate-y-0">
                     <p className="text-sm font-semibold tracking-[0.08em] text-white sm:text-base">
                       Project {item.id}
                     </p>
-                    <p className="mt-1 text-xs text-white/80 sm:text-sm">
+                    <p className=" text-xs text-white/80 sm:text-sm">
                       View project image
                     </p>
                   </div>

@@ -6,12 +6,14 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
-          <div>
-            <img
-              src={assets.logo}
-              alt="MPC Electrical Solutions logo"
-              className="mb-4 h-10 w-auto"
-            />
+          <div className="">
+            <div className="mb-4 flex justify-center items-center w-36 h-36 rounded-full bg-white">
+              <img
+                src={assets.logo}
+                alt="MPC Electrical Solutions logo"
+                className=" h-28 w-auto"
+              />
+            </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               Professional electrical solutions for residential properties.
               Safety, reliability, and quality work you can trust.
