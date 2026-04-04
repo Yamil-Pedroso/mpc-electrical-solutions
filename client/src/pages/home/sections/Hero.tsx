@@ -27,6 +27,21 @@ const itemVariants: Variants = {
   },
 };
 
+const itemProffessionalVariants: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+      delay: 0.4,
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+
 const slideVariants: Variants = {
   initial: {
     opacity: 0,
@@ -98,12 +113,20 @@ const Hero = () => {
                 Electrical solutions
               </motion.span>
 
-              <motion.h1
-                variants={itemVariants}
-                className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-[90px] lg:leading-[1.2] xl:text-[100px] xl:leading-[1.1]"
-              >
-                Safe. Reliable. Professional.
-              </motion.h1>
+              <div className="text-base/12">
+                <motion.h1
+                  variants={itemVariants}
+                  className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px] "
+                >
+                  Safe. Reliable.{" "}
+                </motion.h1>
+                <motion.h1
+                  variants={itemProffessionalVariants}
+                  className="text-[#da1f27] text-4xl font-bold sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px]"
+                >
+                  Professional.
+                </motion.h1>
+              </div>
 
               <motion.p
                 variants={itemVariants}
