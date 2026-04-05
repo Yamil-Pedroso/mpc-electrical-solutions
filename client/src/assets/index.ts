@@ -2,6 +2,7 @@ import logo from "./images/Logo.svg";
 
 // Hero
 import micheElectrical from "./images/hero-section/miche-elec.png";
+import electrician from "./images/hero-section/electrician.png";
 
 // About
 import about from "./images/about-section/about.png";
@@ -39,6 +40,7 @@ interface Assets {
 const assets: Assets = {
   logo,
   micheElectrical,
+  electrician,
   about,
   gallery1,
   gallery2,

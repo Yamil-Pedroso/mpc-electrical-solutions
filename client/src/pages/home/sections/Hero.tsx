@@ -33,11 +33,23 @@ const itemProffessionalVariants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 2,
+      duration: 4,
       ease: [0.22, 1, 0.36, 1],
-      delay: 0.4,
-      type: "spring",
-      stiffness: 100,
+      delay: 0.3,
+    },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: { opacity: 0, x: 50, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+      ease: [0.22, 1, 0.36, 1],
+      delay: 0.2,
     },
   },
 };
@@ -99,7 +111,7 @@ const Hero = () => {
 
       <div className="relative z-10 h-full">
         <Container>
-          <div className="flex h-[78vh] min-h-[620px] items-center sm:h-[82vh] lg:h-[85vh]">
+          <div className="grid h-[78vh] min-h-[620px] items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] sm:h-[82vh] lg:h-[85vh]">
             <motion.div
               variants={contentVariants}
               initial="hidden"
@@ -116,13 +128,14 @@ const Hero = () => {
               <div className="text-base/12">
                 <motion.h1
                   variants={itemVariants}
-                  className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px] "
+                  className="mt-6 max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px]"
                 >
                   Safe. Reliable.{" "}
                 </motion.h1>
+
                 <motion.h1
                   variants={itemProffessionalVariants}
-                  className="text-[#da1f27] text-4xl font-bold sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px]"
+                  className="text-4xl font-bold text-[#da1f27] sm:text-5xl md:text-6xl lg:text-[90px] xl:text-[100px]"
                 >
                   Professional.
                 </motion.h1>
@@ -140,8 +153,10 @@ const Hero = () => {
                 variants={itemVariants}
                 className="mt-10 flex flex-col gap-4 sm:flex-row"
               >
-                <Button>Get in touch</Button>
-                <Button variant="secondary">Call now</Button>
+                <Button href="#contact">Get in touch</Button>
+                <Button phoneNumber="+16474600292" variant="secondary">
+                  Call now
+                </Button>
               </motion.div>
 
               <motion.div
@@ -162,6 +177,19 @@ const Hero = () => {
                   />
                 ))}
               </motion.div>
+            </motion.div>
+
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              animate="visible"
+              className="relative hidden h-full w-full items-end justify-end lg:flex"
+            >
+              {/*<img
+                src={assets.electrician}
+                alt="Electrician silhouette"
+                className="pointer-events-none absolute top-0 -right-100 z-10 h-[88%] w-auto max-w-none object-contain xl:h-[115rem] -scale-x-100"
+              /> */}
             </motion.div>
           </div>
         </Container>

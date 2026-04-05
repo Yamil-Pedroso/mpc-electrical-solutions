@@ -1,31 +1,90 @@
-import { ButtonHTMLAttributes } from "react";
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react";
 
 type ButtonVariant = "primary" | "secondary";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type BaseProps = {
   variant?: ButtonVariant;
+  className?: string;
+  children: ReactNode;
 };
+
+type LinkProps = BaseProps &
+  Omit<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    "className" | "children" | "href"
+  > & {
+    href: string;
+    phoneNumber?: never;
+  };
+
+type PhoneProps = BaseProps &
+  Omit<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    "className" | "children" | "href"
+  > & {
+    phoneNumber: string;
+    href?: never;
+  };
+
+type NativeButtonProps = BaseProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children"> & {
+    href?: never;
+    phoneNumber?: never;
+  };
+
+type ButtonProps = LinkProps | PhoneProps | NativeButtonProps;
 
 const Button = ({
   variant = "primary",
   className = "",
   children,
-  ...props
+  ...rest
 }: ButtonProps) => {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold transition focus:outline-none";
+    "inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2";
 
-  const variants = {
-    primary: "bg-[#d90f1b] text-white hover:bg-red-600",
+  const variants: Record<ButtonVariant, string> = {
+    primary: "bg-[#d90f1b] text-white hover:bg-red-600 focus:ring-[#d90f1b]/40",
     secondary:
-      "border-2 border-[#023962] text-[#023962] bg-[#023962] text-white",
+      "border-2 border-[#023962] bg-[#023962] text-white hover:bg-[#012f52] focus:ring-[#023962]/40",
   };
 
+  const classes = `${baseStyles} ${variants[variant]} ${className}`;
+
+  if ("href" in rest && rest.href) {
+    const { href, ...anchorRest } = rest as Omit<
+      LinkProps,
+      "variant" | "className" | "children"
+    >;
+    return (
+      <a href={href} className={classes} {...anchorRest}>
+        {children}
+      </a>
+    );
+  }
+
+  if ("phoneNumber" in rest && rest.phoneNumber) {
+    const { phoneNumber, ...anchorRest } = rest as Omit<
+      PhoneProps,
+      "variant" | "className" | "children"
+    >;
+    return (
+      <a href={`tel:${phoneNumber}`} className={classes} {...anchorRest}>
+        {children}
+      </a>
+    );
+  }
+
+  const { type = "button", ...buttonRest } = rest as Omit<
+    NativeButtonProps,
+    "variant" | "className" | "children"
+  >;
   return (
-    <button
-      className={`${baseStyles} ${variants[variant]} ${className}`}
-      {...props}
-    >
+    <button type={type} className={classes} {...buttonRest}>
       {children}
     </button>
   );

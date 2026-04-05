@@ -3,7 +3,7 @@ import Hero from "./sections/Hero";
 import Services from "./sections/Services";
 import ElectricianGallery from "./sections/ElectricianGallery";
 import About from "./sections/About";
-import ContactCTA from "./sections/ContactCTA";
+import ContactSection from "./sections/ContactSection";
 import DevelopmentNoticeModal from "@/components/DevelopmentNotificationModal";
 
 const HomePage = () => {
@@ -15,7 +15,7 @@ const HomePage = () => {
       <ElectricianGallery />
       <EmergencyCTA />
       <About />
-      <ContactCTA />
+      <ContactSection />
     </>
   );
 };

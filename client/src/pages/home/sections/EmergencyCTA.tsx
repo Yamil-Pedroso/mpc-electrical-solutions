@@ -23,7 +23,13 @@ const EmergencyCTA = () => {
           </p>
 
           <div className="mt-10">
-            <Button className="bg-[#d90f1b] hover:bg-red-600">Call now</Button>
+            <Button
+              phoneNumber="+16474600292"
+              variant="primary"
+              className="px-8 py-4 text-lg"
+            >
+              Call now
+            </Button>
           </div>
         </div>
       </Container>

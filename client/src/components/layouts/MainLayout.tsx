@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import TopBar from "./TopBar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Lenis from "@studio-freight/lenis";
@@ -32,6 +33,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <TopBar />
+
       <Navbar />
       <main>{children}</main>
       <Footer />

@@ -32,6 +32,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="#gallery" className="hover:text-[#d90f1b] transition">
+                  Gallery
+                </a>
+              </li>
+              <li>
                 <a href="#about" className="hover:text-[#d90f1b] transition">
                   About
                 </a>
@@ -55,7 +60,7 @@ const Footer = () => {
                   href="tel:+123456789"
                   className="hover:text-[#d90f1b] transition"
                 >
-                  📞 +1 234 567 89
+                  📞 +1 (647) 460-0292
                 </a>
               </li>
               <li>📍 Residential services</li>
