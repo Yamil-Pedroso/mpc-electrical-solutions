@@ -377,7 +377,7 @@ export default function ContactSection() {
               <div className="mt-10 space-y-4">
                 <a
                   href="mailto:mpcelectricalsolutions@gmail.com"
-                  className="flex items-start gap-4 rounded-2xl border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm"
+                  className="flex items-start gap-4 border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#051a37]/8 text-[#051a37]">
                     <FiMail />
@@ -394,7 +394,7 @@ export default function ContactSection() {
 
                 <a
                   href="tel:+16474600292"
-                  className="flex items-start gap-4 rounded-2xl border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm"
+                  className="flex items-start gap-4 border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#051a37]/8 text-[#051a37]">
                     <FiPhone />
@@ -409,7 +409,7 @@ export default function ContactSection() {
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 rounded-2xl border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm">
+                <div className="flex items-start gap-4 border border-[#051a37]/8 bg-white/80 p-4 shadow-[0_10px_30px_rgba(5,26,55,0.04)] backdrop-blur-sm">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#051a37]/8 text-[#051a37]">
                     <FiMapPin />
                   </div>
@@ -427,7 +427,7 @@ export default function ContactSection() {
 
             <motion.div
               variants={fadeUp}
-              className="rounded-[32px] border border-[#051a37]/8 bg-white p-6 shadow-[0_20px_60px_rgba(5,26,55,0.08)] sm:p-8 lg:p-10"
+              className=" border border-[#051a37]/8 bg-white p-6 shadow-[0_20px_60px_rgba(5,26,55,0.08)] sm:p-8 lg:p-10"
             >
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid gap-5 md:grid-cols-2">
@@ -565,7 +565,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#da1f27] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(218,31,39,0.22)] transition duration-300 hover:scale-[1.02] hover:bg-[#bf1820] disabled:cursor-not-allowed disabled:opacity-70"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#da1f27] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(218,31,39,0.22)] transition duration-300 hover:scale-[1.02] hover:bg-[#bf1820] disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>

@@ -44,8 +44,8 @@ const About = () => {
       className="relative overflow-hidden bg-[#f7f8fb] py-24 sm:py-28 lg:py-32"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#da1f27]/8 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#051a37]/8 blur-3xl" />
+        <div className="absolute left-0 top-0 h-72 w-72  bg-[#da1f27]/8 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80  bg-[#051a37]/8 blur-3xl" />
       </div>
 
       <Container>
@@ -58,10 +58,10 @@ const About = () => {
         >
           <motion.div variants={imageVariants} className="relative">
             <div className="absolute -left-4 -top-4 h-24 w-24 rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 blur-2xl sm:-left-6 sm:-top-6 sm:h-28 sm:w-28" />
-            <div className="absolute -bottom-5 -right-5 h-24 w-24 rounded-full border border-[#051a37]/12 bg-[#051a37]/8 blur-2xl sm:-bottom-6 sm:-right-6 sm:h-32 sm:w-32" />
+            <div className="absolute -bottom-5 -right-5 h-24 w-24  border border-[#051a37]/12 bg-[#051a37]/8 blur-2xl sm:-bottom-6 sm:-right-6 sm:h-32 sm:w-32" />
 
-            <div className="relative overflow-hidden rounded-[30px] border border-[#051a37]/8 bg-white p-3 shadow-[0_22px_70px_rgba(5,26,55,0.10)] sm:p-4">
-              <div className="overflow-hidden rounded-[24px]">
+            <div className="relative overflow-hidden border border-[#051a37]/8 bg-white p-3 shadow-[0_22px_70px_rgba(5,26,55,0.10)] sm:p-4">
+              <div className="overflow-hidden ">
                 <img
                   src={assets.about}
                   alt="Professional electrician at work"
@@ -105,7 +105,7 @@ const About = () => {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <div className="rounded-2xl border border-[#051a37]/8 bg-white px-5 py-4 shadow-[0_10px_30px_rgba(5,26,55,0.05)]">
+              <div className=" border border-[#051a37]/8 bg-white px-5 py-4 shadow-[0_10px_30px_rgba(5,26,55,0.05)]">
                 <p className="text-xs font-semibold tracking-[0.18em] text-[#051a37]/45 uppercase">
                   Quality
                 </p>
@@ -114,7 +114,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-[#051a37]/8 bg-white px-5 py-4 shadow-[0_10px_30px_rgba(5,26,55,0.05)]">
+              <div className=" border border-[#051a37]/8 bg-white px-5 py-4 shadow-[0_10px_30px_rgba(5,26,55,0.05)]">
                 <p className="text-xs font-semibold tracking-[0.18em] text-[#051a37]/45 uppercase">
                   Service
                 </p>

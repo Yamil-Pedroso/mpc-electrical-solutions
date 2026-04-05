@@ -352,8 +352,9 @@ export default function ElectricianGallery({
                 Real electrical projects, clearly showcased.
               </h2>
               <p className="mt-4 text-base leading-7 text-[#051a37]/75">
-                A simple and elegant gallery with all 24 images visible, smooth
-                hover effects, and a clean modal slider.
+                Explore our gallery of residential electrical work, showcasing
+                our commitment to quality and professionalism in every project
+                we undertake.
               </p>
             </div>
 

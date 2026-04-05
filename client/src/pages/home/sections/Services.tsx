@@ -96,9 +96,9 @@ const Services = () => {
                 <motion.article
                   key={index}
                   variants={cardVariants}
-                  className={`group relative flex h-full min-h-[320px] w-full flex-col overflow-hidden rounded-[28px] border border-[#051a37]/8 bg-white p-7 shadow-[0_16px_40px_rgba(5,26,55,0.06)] transition duration-500 hover:-translate-y-2 hover:border-[#da1f27]/18 hover:shadow-[0_24px_60px_rgba(5,26,55,0.12)] sm:p-8 xl:col-span-2 ${
+                  className={`group relative flex h-full min-h-[320px] w-full flex-col overflow-hidden border border-[#051a37]/8 bg-white p-7 shadow-[0_16px_40px_rgba(5,26,55,0.06)] transition duration-500 hover:-translate-y-2 hover:border-[#da1f27]/18 hover:shadow-[0_24px_60px_rgba(5,26,55,0.12)] sm:p-8 xl:col-span-2 ${
                     isSecondLast ? "xl:col-start-2" : ""
-                  } ${isLast ? "xl:col-start-4" : ""}`}
+                  } ${isLast ? "xl:col-start-4" : ""} cursor-pointer`}
                 >
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#da1f27] via-[#da1f27]/70 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
