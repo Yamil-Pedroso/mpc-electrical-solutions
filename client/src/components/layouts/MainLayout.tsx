@@ -3,6 +3,7 @@ import TopBar from "./TopBar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Lenis from "@studio-freight/lenis";
+import { ScrollToTop } from "../common/ScrollToTop";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -38,6 +39,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
