@@ -3,12 +3,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { assets } from "@/assets";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { BsGrid3X3GapFill, BsGrid1X2Fill, BsGridFill } from "react-icons/bs";
+import { BiSolidDoorOpen } from "react-icons/bi";
 
 type GalleryItem = {
   id: number;
   image: string;
   alt: string;
 };
+
+type GalleryLayout = "compact" | "split" | "showcase";
 
 const galleryItems: GalleryItem[] = Array.from({ length: 24 }, (_, index) => ({
   id: index + 1,
@@ -59,12 +63,11 @@ function GalleryModal({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Fixed close button outside animated image container */}
       <button
         type="button"
         onClick={onClose}
         aria-label="Close modal"
-        className="absolute right-4 top-4 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] sm:right-6 sm:top-6 sm:h-12 sm:w-12 lg:right-8 lg:top-8"
+        className="absolute right-4 top-4 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] sm:right-6 sm:top-6 sm:h-12 sm:w-12 lg:right-8 lg:top-8 cursor-pointer"
       >
         <IoClose />
       </button>
@@ -83,7 +86,7 @@ function GalleryModal({
               type="button"
               onClick={onPrev}
               aria-label="Previous image"
-              className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-[140%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] xl:flex"
+              className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-[140%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] xl:flex cursor-pointer"
             >
               <FaArrowLeft />
             </button>
@@ -92,7 +95,7 @@ function GalleryModal({
               type="button"
               onClick={onPrev}
               aria-label="Previous image"
-              className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-[115%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] lg:flex xl:hidden"
+              className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-[115%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] lg:flex xl:hidden cursor-pointer"
             >
               <FaArrowLeft />
             </button>
@@ -143,7 +146,7 @@ function GalleryModal({
               type="button"
               onClick={onNext}
               aria-label="Next image"
-              className="absolute right-0 top-1/2 z-20 hidden h-12 w-12 translate-x-[140%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] xl:flex"
+              className="absolute right-0 top-1/2 z-20 hidden h-12 w-12 translate-x-[140%] -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#051a37]/85 text-xl text-white backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#da1f27] xl:flex cursor-pointer"
             >
               <FaArrowRight />
             </button>
@@ -225,12 +228,35 @@ const cardVariants = {
   },
 };
 
+const layoutOptions: {
+  id: GalleryLayout;
+  label: string;
+  icon: React.ReactNode;
+}[] = [
+  {
+    id: "compact",
+    label: "Compact grid",
+    icon: <BsGrid3X3GapFill />,
+  },
+  {
+    id: "split",
+    label: "Two column",
+    icon: <BsGrid1X2Fill />,
+  },
+  {
+    id: "showcase",
+    label: "Showcase grid",
+    icon: <BsGridFill />,
+  },
+];
+
 export default function ElectricianGallery({
   items = galleryItems,
 }: {
   items?: GalleryItem[];
 }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [layout, setLayout] = useState<GalleryLayout>("compact");
 
   const selectedItem = useMemo(() => {
     if (selectedIndex === null) return null;
@@ -254,67 +280,151 @@ export default function ElectricianGallery({
     });
   };
 
+  const getGridClasses = () => {
+    switch (layout) {
+      case "split":
+        return "grid grid-cols-1 gap-[2px] px-3 sm:px-4 md:grid-cols-2 md:px-4 lg:px-6";
+      case "showcase":
+        return "grid grid-cols-1 gap-[2px] px-3 sm:grid-cols-2 sm:px-4 lg:grid-cols-3 lg:px-6";
+      case "compact":
+      default:
+        return "grid grid-cols-2 gap-[2px] sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5";
+    }
+  };
+
+  const getCardWrapperClasses = () => {
+    switch (layout) {
+      case "split":
+        return "relative aspect-[16/10] overflow-hidden";
+      case "showcase":
+        return "relative aspect-[4/3] overflow-hidden";
+      case "compact":
+      default:
+        return "relative aspect-[1/1] overflow-hidden sm:aspect-[1/1] lg:aspect-[4/4.3]";
+    }
+  };
+
+  const getCardOuterClasses = () => {
+    return "group relative overflow-hidden bg-white text-left transition duration-300";
+  };
+
+  const getCardPadding = () => {
+    switch (layout) {
+      case "split":
+        return "absolute inset-x-0 bottom-0 p-6 sm:p-7 lg:p-8";
+      case "showcase":
+        return "absolute inset-x-0 bottom-0 p-5 sm:p-6";
+      case "compact":
+      default:
+        return "absolute inset-x-0 bottom-0 p-6 sm:p-8";
+    }
+  };
+
+  const getPlusSizeClasses = () => {
+    switch (layout) {
+      case "compact":
+        return "h-10 w-10 text-sm sm:h-11 sm:w-11 sm:text-base";
+      case "split":
+        return "h-12 w-12 text-base sm:h-14 sm:w-14 sm:text-lg";
+      case "showcase":
+        return "h-10 w-10 text-sm sm:h-11 sm:w-11 sm:text-sm";
+      default:
+        return "h-10 w-10 text-sm";
+    }
+  };
+
   return (
     <section id="gallery" className="bg-white px-0 py-16 sm:py-20">
       <div className="mx-auto w-full max-w-[1600px]">
         <motion.div
-          className="mb-10 max-w-2xl px-4 sm:px-6 lg:px-8"
+          className="mb-10 px-4 sm:px-6 lg:px-8"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
         >
-          <span className="inline-flex rounded-full bg-[#da1f27]/10 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-[#da1f27] uppercase">
-            Gallery
-          </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#051a37] sm:text-5xl">
-            Real electrical projects, clearly showcased.
-          </h2>
-          <p className="mt-4 text-base leading-7 text-[#051a37]/75">
-            A simple and elegant gallery with all 24 images visible, smooth
-            hover effects, and a clean modal slider.
-          </p>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <span className="inline-flex rounded-full bg-[#da1f27]/10 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-[#da1f27] uppercase">
+                Gallery
+              </span>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#051a37] sm:text-5xl">
+                Real electrical projects, clearly showcased.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[#051a37]/75">
+                A simple and elegant gallery with all 24 images visible, smooth
+                hover effects, and a clean modal slider.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              {layoutOptions.map((option) => {
+                const isActive = layout === option.id;
+
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setLayout(option.id)}
+                    aria-label={option.label}
+                    title={option.label}
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border text-lg transition duration-300 ${
+                      isActive
+                        ? "border-[#da1f27] bg-[#da1f27] text-white shadow-[0_12px_28px_rgba(218,31,39,0.22)]"
+                        : "border-[#051a37]/10 bg-white text-[#051a37]/75 hover:border-[#da1f27]/35 hover:text-[#da1f27]"
+                    }`}
+                  >
+                    {option.icon}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 gap-[2px] sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+          key={layout}
+          className={getGridClasses()}
           variants={gridVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
+          animate="visible"
         >
           {items.map((item, index) => (
             <motion.button
-              key={item.id}
+              key={`${layout}-${item.id}`}
               type="button"
               onClick={() => openModal(index)}
               variants={cardVariants}
-              className="group relative overflow-hidden bg-white text-left transition duration-300"
+              className={getCardOuterClasses()}
               aria-label={`Open image ${item.id}`}
             >
-              <div className="relative aspect-[1/1] overflow-hidden sm:aspect-[1/1] lg:aspect-[4/4.3]">
+              <div className={getCardWrapperClasses()}>
                 <img
                   src={item.image}
                   alt={item.alt}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110 cursor-pointer"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051a37]/80 via-[#051a37]/20 to-transparent opacity-70 transition duration-500 group-hover:opacity-95" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#051a37]/80 via-[#051a37]/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-95" />
                 <div className="absolute inset-0 bg-[#da1f27]/0 transition duration-500 group-hover:bg-[#da1f27]/15" />
 
-                <div className="absolute inset-0 flex items-end justify-between p-6 sm:p-8">
-                  <div className="translate-y-4 transition duration-500 group-hover:translate-y-0">
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center ">
+                  <div
+                    className={`flex ${getPlusSizeClasses()} -translate-y-10 items-center justify-center bg-[#da1f27] text-white opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100`}
+                  >
+                    <BiSolidDoorOpen size={32} />
+                  </div>
+                </div>
+
+                <div className={getCardPadding()}>
+                  <div className="translate-y-8 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <p className="text-sm font-semibold tracking-[0.08em] text-white sm:text-base">
                       Project {item.id}
                     </p>
-                    <p className="text-xs text-white/80 sm:text-sm">
+                    <p className="mt-1 text-xs text-white sm:text-sm">
                       View project image
                     </p>
                   </div>
-
-                  <span className="flex h-11 w-11 translate-y-4 items-center justify-center rounded-full border border-white/20 bg-white/15 text-lg text-white backdrop-blur-md transition duration-500 group-hover:translate-y-0 group-hover:scale-110 group-hover:bg-[#da1f27] group-hover:text-white">
-                    ↗
-                  </span>
                 </div>
               </div>
             </motion.button>
