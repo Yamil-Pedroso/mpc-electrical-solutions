@@ -5,12 +5,16 @@ import ElectricianGallery from "./sections/ElectricianGallery";
 import About from "./sections/About";
 import ContactSection from "./sections/ContactSection";
 import DevelopmentNoticeModal from "@/components/DevelopmentNotificationModal";
+import TrustedAssociations from "./sections/TrustAssociations";
+import InfoTicker from "./sections/InfoTicker";
 
 const HomePage = () => {
   return (
     <>
       <DevelopmentNoticeModal />
       <Hero />
+      <TrustedAssociations />
+      <InfoTicker />
       <Services />
       <ElectricianGallery />
       <EmergencyCTA />

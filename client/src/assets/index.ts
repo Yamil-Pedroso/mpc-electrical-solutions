@@ -33,6 +33,11 @@ import gallery22 from "./images/gallery/img-22.jpeg";
 import gallery23 from "./images/gallery/img-23.jpeg";
 import gallery24 from "./images/gallery/img-24.jpeg";
 
+// Firmas
+import firma1 from "./images/firmas/firma-1.jpeg";
+import firma2 from "./images/firmas/firma-2.jpeg";
+import firma3 from "./images/firmas/firma-3.jpeg";
+
 interface Assets {
   [key: string]: string;
 }
@@ -66,6 +71,9 @@ const assets: Assets = {
   gallery22,
   gallery23,
   gallery24,
+  firma1,
+  firma2,
+  firma3,
 };
 
 export { assets };
