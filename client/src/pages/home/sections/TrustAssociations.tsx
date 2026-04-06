@@ -63,9 +63,7 @@ export default function TrustedAssociations() {
         <div className="overflow-hidden  bg-gradient-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
           <div className="grid items-center gap-10 px-6 py-8 md:grid-cols-[1.1fr_1.4fr] md:px-10 md:py-10 lg:px-14">
             <motion.div variants={itemVariants} className="max-w-xl">
-              <div className="mb-4 h-[3px] w-16 rounded-full bg-[#d90f1b]" />
-
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d90f1b]">
+              <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-sm font-semibold tracking-[0.18em] text-[#da1f27] uppercase">
                 Trusted Credentials
               </span>
 
