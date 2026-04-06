@@ -52,7 +52,7 @@ const itemVariants = {
 
 export default function TrustedAssociations() {
   return (
-    <section className="relative w-full bg-[#031227] py-14 md:py-40">
+    <section className="relative w-full bg-[#ffffff] py-14 md:py-40">
       <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
@@ -60,7 +60,7 @@ export default function TrustedAssociations() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
       >
-        <div className="overflow-hidden border border-[#051a37]/10 bg-gradient-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
+        <div className="overflow-hidden  bg-gradient-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
           <div className="grid items-center gap-10 px-6 py-8 md:grid-cols-[1.1fr_1.4fr] md:px-10 md:py-10 lg:px-14">
             <motion.div variants={itemVariants} className="max-w-xl">
               <div className="mb-4 h-[3px] w-16 rounded-full bg-[#d90f1b]" />
