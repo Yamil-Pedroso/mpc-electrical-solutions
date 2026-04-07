@@ -418,7 +418,7 @@ export default function ContactSection() {
                       Location
                     </p>
                     <p className="mt-1 text-sm text-[#051a37]/68">
-                      Toronto, Canada
+                      Toronto and the GTA
                     </p>
                   </div>
                 </div>

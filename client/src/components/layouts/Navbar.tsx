@@ -271,7 +271,7 @@ const Navbar = () => {
                       <p className="text-xs font-semibold tracking-[0.18em] text-white/45 uppercase">
                         Location
                       </p>
-                      <p className="mt-1 text-sm">Toronto, Canada</p>
+                      <p className="mt-1 text-sm">Toronto and the GTA</p>
                     </div>
                   </div>
                 </div>
