@@ -60,7 +60,7 @@ export default function TrustedAssociations() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
       >
-        <div className="overflow-hidden  bg-gradient-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
+        <div className="overflow-hidden  bg-linear-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
           <div className="grid items-center gap-10 px-6 py-8 md:grid-cols-[1.1fr_1.4fr] md:px-10 md:py-10 lg:px-14">
             <motion.div variants={itemVariants} className="max-w-xl">
               <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-sm font-semibold tracking-[0.18em] text-[#da1f27] uppercase">
@@ -82,13 +82,13 @@ export default function TrustedAssociations() {
               variants={itemVariants}
               className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0"
             >
-              {associations.map((association, index) => (
+              {associations.map((association, i) => (
                 <motion.div
                   key={association.id}
                   whileHover={{ y: -4, scale: 1.02 }}
                   transition={{ duration: 0.25 }}
-                  className={`flex h-full min-h-[180px] items-center justify-center px-6 py-8 md:min-h-[220px] ${
-                    index !== associations.length - 1
+                  className={`flex h-full min-h-45 items-center justify-center px-6 py-8 md:min-h-55 ${
+                    i !== associations.length - 1
                       ? "sm:border-r sm:border-[#031227]/10"
                       : ""
                   }`}
@@ -96,7 +96,7 @@ export default function TrustedAssociations() {
                   <img
                     src={association.logo}
                     alt={association.alt}
-                    className="max-h-24 w-auto object-contain transition-transform duration-300 hover:scale-105 sm:max-h-28 md:max-h-32 lg:max-h-36"
+                    className={`${i === 1 ? "max-h-36" : "max-h-24"} w-auto object-contain transition-transform duration-300 hover:scale-105 sm:max-h-28 md:max-h-32 lg:max-h-36`}
                   />
                 </motion.div>
               ))}
