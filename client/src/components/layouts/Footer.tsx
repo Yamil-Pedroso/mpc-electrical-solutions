@@ -57,13 +57,13 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-gray-300">
               <li>
                 <a
-                  href="tel:+123456789"
+                  href="tel:+16474600292"
                   className="hover:text-[#d90f1b] transition"
                 >
                   📞 +1 (647) 460-0292
                 </a>
               </li>
-              <li>📍 Residential services</li>
+              <li>📍 Residential & Commercial services</li>
               <li>⏱ Emergency support available</li>
             </ul>
           </div>

@@ -70,7 +70,7 @@ const TopBar = () => {
             className="flex items-center gap-2 text-sm text-white/80"
           >
             <FiMapPin className="text-[#da1f27]" />
-            <span>Toronto, Canada</span>
+            <span>Toronto and the GTA</span>
           </motion.div>
         </motion.div>
 
