@@ -3,7 +3,7 @@ import logo from "./images/Logo.svg";
 // Hero
 import micheElectrical from "./images/hero-section/miche-elec.png";
 import electrician from "./images/hero-section/electrician.png";
-import elecImg from "./images/hero-images/elec_img.png";
+import elecImg from "./images/hero-images/elec_img.webp";
 import char from "./images/character/char.png";
 
 // About
