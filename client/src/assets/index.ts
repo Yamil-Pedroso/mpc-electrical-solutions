@@ -4,6 +4,7 @@ import logo from "./images/Logo.svg";
 import micheElectrical from "./images/hero-section/miche-elec.png";
 import electrician from "./images/hero-section/electrician.png";
 import elecImg from "./images/hero-images/elec_img.png";
+import char from "./images/character/char.png";
 
 // About
 import about from "./images/about-section/about.png";
@@ -45,6 +46,7 @@ interface Assets {
 
 const assets: Assets = {
   logo,
+  char,
   micheElectrical,
   electrician,
   elecImg,
