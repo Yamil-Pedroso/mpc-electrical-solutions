@@ -199,7 +199,8 @@ const Hero = () => {
                 src={assets.electrician}
                 alt="Electrician silhouette"
                 className="pointer-events-none absolute top-0 -right-100 z-10 h-[88%] w-auto max-w-none object-contain xl:h-[115rem] -scale-x-100"
-              /> */}
+              />
+*/}{" "}
             </motion.div>
           </div>
         </Container>

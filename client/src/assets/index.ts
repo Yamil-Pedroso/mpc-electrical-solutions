@@ -3,6 +3,7 @@ import logo from "./images/Logo.svg";
 // Hero
 import micheElectrical from "./images/hero-section/miche-elec.png";
 import electrician from "./images/hero-section/electrician.png";
+import elecImg from "./images/hero-images/elec_img.png";
 
 // About
 import about from "./images/about-section/about.png";
@@ -46,6 +47,7 @@ const assets: Assets = {
   logo,
   micheElectrical,
   electrician,
+  elecImg,
   about,
   gallery1,
   gallery2,
