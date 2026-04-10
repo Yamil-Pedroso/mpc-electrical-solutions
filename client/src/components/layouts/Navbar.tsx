@@ -5,6 +5,7 @@ import { assets } from "@/assets";
 import { menuItems } from "@/data/menuItemsData";
 import Button from "@/components/ui/Button";
 import Tooltip from "@/components/common/Tooltip";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const menuVariants = {
   hidden: {
@@ -139,20 +140,30 @@ const Navbar = () => {
 
           <Button
             phoneNumber="+16474600292"
-            variant="primary"
-            className="ml-4 px-6 py-3 text-sm"
+            variant="terciary"
+            className="px-3 py-2 text-sm  rounded-full"
           >
-            Call now
+            <div className="flex items-center gap-2">
+              <span className="mr-2 text-lg p-3 rounded-full bg-[#ffffff] text-white">
+                <BsFillTelephoneFill className="text-[#d90f1b]" />
+              </span>
+              <p>Call now</p>
+            </div>
           </Button>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
           <Button
             phoneNumber="+16474600292"
-            variant="primary"
-            className="ml-4 px-6 py-3 text-sm"
+            variant="terciary"
+            className="px-3 py-2 text-sm  rounded-full"
           >
-            Call now
+            <div className="flex items-center gap-2">
+              <span className="mr-2 text-lg p-3 rounded-full bg-[#ffffff] text-white">
+                <BsFillTelephoneFill className="text-[#d90f1b]" />
+              </span>
+              <p>Call now</p>
+            </div>
           </Button>
 
           <button
@@ -212,10 +223,15 @@ const Navbar = () => {
 
               <Button
                 phoneNumber="+16474600292"
-                variant="primary"
-                className="w-full max-w-xs text-center"
+                variant="terciary"
+                className="px-3 py-2 text-sm  rounded-full"
               >
-                Call now
+                <div className="flex items-center gap-2">
+                  <span className="mr-2 text-lg p-3 rounded-full bg-[#ffffff] text-white">
+                    <BsFillTelephoneFill className="text-[#d90f1b]" />
+                  </span>
+                  <p>Call now</p>
+                </div>
               </Button>
             </motion.nav>
 

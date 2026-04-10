@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { assets } from "@/assets";
 
 const heroSlides = [assets.gallery1, assets.gallery2, assets.gallery3];
@@ -153,10 +154,19 @@ const Hero = () => {
                 variants={itemVariants}
                 className="mt-10 flex flex-col gap-4 sm:flex-row"
               >
-                <Button href="#contact">Get in touch</Button>
-                <Button phoneNumber="+16474600292" variant="secondary">
-                  Call now
+                <Button className="px-8 py-4" href="#contact">
+                  <div className="flex items-center gap-2">
+                    <span>Get in touch</span>
+                    <FaLongArrowAltRight className="text-lg" />
+                  </div>
                 </Button>
+                {/*<Button
+                  className="px-8 py-4"
+                  phoneNumber="+16474600292"
+                  variant="secondary"
+                >
+                  Call now
+                </Button> */}
               </motion.div>
 
               <motion.div

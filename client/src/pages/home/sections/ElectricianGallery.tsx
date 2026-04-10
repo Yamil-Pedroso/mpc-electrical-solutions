@@ -114,7 +114,7 @@ function GalleryModal({
                 />
               </AnimatePresence>
 
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#051a37]/68 via-transparent to-transparent sm:h-36" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-[#051a37]/68 via-transparent to-transparent sm:h-36" />
 
               <motion.div
                 className="absolute inset-x-0 bottom-0 flex items-end justify-between px-4 py-4 text-white sm:px-6 sm:py-6"
@@ -335,7 +335,7 @@ export default function ElectricianGallery({
 
   return (
     <section id="gallery" className="bg-white px-0 py-16 sm:py-20">
-      <div className="mx-auto w-full max-w-[1600px]">
+      <div className="mx-auto w-full max-w-400">
         <motion.div
           className="mb-10 px-4 sm:px-6 lg:px-8"
           variants={headerVariants}
@@ -406,7 +406,7 @@ export default function ElectricianGallery({
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-110 cursor-pointer"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#051a37]/80 via-[#051a37]/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-95" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#051a37]/80 via-[#051a37]/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-95" />
                 <div className="absolute inset-0 bg-[#da1f27]/0 transition duration-500 group-hover:bg-[#da1f27]/15" />
 
                 <div className="pointer-events-none absolute inset-0 flex items-center justify-center ">
@@ -417,7 +417,7 @@ export default function ElectricianGallery({
                   </div>
                 </div>
 
-                <div className={getCardPadding()}>
+                <div className={`${getCardPadding()}`}>
                   <div className="translate-y-8 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <p className="text-sm font-semibold tracking-[0.08em] text-white sm:text-base">
                       Project {item.id}
