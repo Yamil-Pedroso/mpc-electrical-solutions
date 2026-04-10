@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const EmergencyCTA = () => {
   return (
@@ -25,10 +26,15 @@ const EmergencyCTA = () => {
           <div className="mt-10">
             <Button
               phoneNumber="+16474600292"
-              variant="primary"
-              className="px-8 py-4 text-lg"
+              variant="terciary"
+              className="px-3 py-2 text-sm  rounded-full"
             >
-              Call now
+              <div className="flex items-center gap-2">
+                <span className="mr-2 text-lg p-3 rounded-full bg-[#ffffff] text-white">
+                  <BsFillTelephoneFill className="text-[#d90f1b]" />
+                </span>
+                <p>Call now</p>
+              </div>
             </Button>
           </div>
         </div>
