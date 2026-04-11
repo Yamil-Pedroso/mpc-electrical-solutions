@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
-import Tooltip from "@/components/common/Tooltip";
+//import Tooltip from "@/components/common/Tooltip";
 
 const topBarVariants = {
   hidden: {
@@ -55,7 +55,14 @@ const TopBar = () => {
             <FiMail className="text-[#da1f27]" />
             <span>mpcelectricalsolutions@gmail.com</span>
           </motion.a>
+        </motion.div>
 
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ staggerChildren: 0.08, delayChildren: 0.2 }}
+          className="flex items-center gap-3"
+        >
           <motion.a
             variants={itemVariants}
             href="tel:+16474600292"
@@ -72,15 +79,7 @@ const TopBar = () => {
             <FiMapPin className="text-[#da1f27]" />
             <span>Toronto and the GTA</span>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ staggerChildren: 0.08, delayChildren: 0.2 }}
-          className="flex items-center gap-3"
-        >
-          <motion.span
+          {/*<motion.span
             variants={itemVariants}
             className="text-xs font-medium tracking-[0.2em] text-white/45 uppercase"
           >
@@ -107,7 +106,7 @@ const TopBar = () => {
             >
               ?
             </motion.a>
-          </Tooltip>
+          </Tooltip> */}
         </motion.div>
       </div>
     </motion.div>

@@ -4,7 +4,7 @@ import { FiMail, FiMapPin, FiMenu, FiPhone, FiX } from "react-icons/fi";
 import { assets } from "@/assets";
 import { menuItems } from "@/data/menuItemsData";
 import Button from "@/components/ui/Button";
-import Tooltip from "@/components/common/Tooltip";
+//import Tooltip from "@/components/common/Tooltip";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 const menuVariants = {
@@ -292,7 +292,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <div className="mt-6 border-t border-white/10 pt-5">
+                {/*<div className="mt-6 border-t border-white/10 pt-5">
                   <p className="mb-3 text-xs font-semibold tracking-[0.24em] text-white/45 uppercase">
                     Follow us
                   </p>
@@ -318,7 +318,7 @@ const Navbar = () => {
                       </a>
                     </Tooltip>
                   </div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </motion.div>
