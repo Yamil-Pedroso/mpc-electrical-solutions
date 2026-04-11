@@ -95,7 +95,7 @@ const About = () => {
 
             <p className="mt-6 text-base leading-8 text-[#051a37]/70 sm:text-lg">
               With years of experience in residential & commercial electrical
-              work, I focus on delivering safe, reliable, and high-quality
+              work, we focus on delivering safe, reliable, and high-quality
               solutions tailored to each home.
             </p>
 
