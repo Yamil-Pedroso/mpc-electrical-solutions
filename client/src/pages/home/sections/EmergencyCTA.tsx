@@ -1,6 +1,30 @@
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { motion, type Variants } from "framer-motion";
+
+const phoneIconVariants: Variants = {
+  rest: {
+    scale: 1.2,
+    rotate: 0,
+  },
+  hover: {
+    scale: 1.3,
+    rotate: [0, -12, 12, -10, 10, -6, 6, 0],
+    transition: {
+      scale: {
+        duration: 0.2,
+        ease: "easeOut",
+      },
+      rotate: {
+        duration: 0.55,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 2.3,
+      },
+    },
+  },
+};
 
 const EmergencyCTA = () => {
   return (
@@ -29,12 +53,23 @@ const EmergencyCTA = () => {
               variant="terciary"
               className="px-3 py-2 text-sm  rounded-full"
             >
-              <div className="flex items-center gap-2">
-                <span className="mr-2 text-lg p-3 rounded-full bg-[#ffffff] text-white">
-                  <BsFillTelephoneFill className="text-[#d90f1b]" />
+              <motion.div
+                className="flex items-center gap-2"
+                initial="rest"
+                animate="rest"
+                whileHover="hover"
+              >
+                <span className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#ffffff]">
+                  <motion.span
+                    className="inline-block"
+                    variants={phoneIconVariants}
+                    style={{ originX: 0.5, originY: 0.5 }}
+                  >
+                    <BsFillTelephoneFill className="text-[#d90f1b]" />
+                  </motion.span>
                 </span>
                 <p>Call now</p>
-              </div>
+              </motion.div>
             </Button>
           </div>
         </div>
