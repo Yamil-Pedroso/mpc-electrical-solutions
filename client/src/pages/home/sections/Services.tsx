@@ -125,9 +125,9 @@ const Services = () => {
                         Professional service
                       </span>
 
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#051a37]/10 bg-[#051a37]/4 text-[#051a37] transition duration-500 group-hover:border-[#da1f27]/20 group-hover:bg-[#da1f27] group-hover:text-white">
+                      {/*<span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#051a37]/10 bg-[#051a37]/4 text-[#051a37] transition duration-500 group-hover:border-[#da1f27]/20 group-hover:bg-[#da1f27] group-hover:text-white">
                         →
-                      </span>
+                      </span>*/}
                     </div>
                   </div>
                 </motion.article>
