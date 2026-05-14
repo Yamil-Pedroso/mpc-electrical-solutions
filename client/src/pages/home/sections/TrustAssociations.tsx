@@ -5,6 +5,7 @@ type Association = {
   id: number;
   logo: string;
   alt: string;
+  content?: string | null;
 };
 
 const associations: Association[] = [
@@ -12,16 +13,19 @@ const associations: Association[] = [
     id: 1,
     logo: assets.firma1,
     alt: "Association One logo",
+    content: null,
   },
   {
     id: 2,
     logo: assets.firma2,
     alt: "Association Two logo",
+    content: "ECRA/ESA Lic. #7018884",
   },
   {
     id: 3,
     logo: assets.firma3,
     alt: "Association Three logo",
+    content: null,
   },
 ];
 
@@ -93,11 +97,15 @@ export default function TrustedAssociations() {
                       : ""
                   }`}
                 >
-                  <img
-                    src={association.logo}
-                    alt={association.alt}
-                    className={`${i === 1 ? "max-h-36" : "max-h-24"} w-auto object-contain transition-transform duration-300 hover:scale-105 sm:max-h-28 md:max-h-32 lg:max-h-36`}
-                  />
+                  <div className="flex flex-col items-center gap-4 text-center">
+                    <img
+                      src={association.logo}
+                      alt={association.alt}
+                      className={`${i === 1 ? "max-h-36" : "max-h-24"} w-auto object-contain transition-transform duration-300 hover:scale-105 sm:max-h-28 md:max-h-32 lg:max-h-36`}
+                    />
+
+                    <p>{association.content}</p>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>

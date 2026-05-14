@@ -74,7 +74,7 @@ export default function Tooltip({
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={`max-w-80 p-4 pointer-events-none absolute z-50 whitespace-nowrap rounded-xl bg-[#051a37] px-3 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(5,26,55,0.22)] ${positionClasses[position]}`}
+            className={`max-w-80 p-4 pointer-events-none absolute z-50 whitespace-nowrap rounded-xl bg-[#173760] px-3 py-2 text-xs font-medium text-white shadow-[0_10px_30px_rgba(5,26,55,0.22)] ${positionClasses[position]}`}
           >
             {title}
 

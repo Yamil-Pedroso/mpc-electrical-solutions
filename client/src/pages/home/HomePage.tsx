@@ -7,6 +7,7 @@ import ContactSection from "./sections/ContactSection";
 import DevelopmentNoticeModal from "@/components/DevelopmentNotificationModal";
 import TrustedAssociations from "./sections/TrustAssociations";
 import InfoTicker from "./sections/InfoTicker";
+import Testimonial from "./sections/Testimonial";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <ElectricianGallery />
       <EmergencyCTA />
       <About />
+      <Testimonial />
       <ContactSection />
     </>
   );
