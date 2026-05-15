@@ -37,7 +37,7 @@ const containerVariants = {
     transition: {
       duration: 0.8,
       ease: [0.22, 1, 0.36, 1] as const,
-      staggerChildren: 0.15,
+      staggerChildren: 0.12,
     },
   },
 };
@@ -56,56 +56,59 @@ const itemVariants = {
 
 export default function TrustedAssociations() {
   return (
-    <section className="relative w-full bg-[#ffffff] py-14 md:py-40">
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#da1f27]/6 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#173760]/7 blur-3xl" />
+      </div>
+
       <motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="overflow-hidden  bg-linear-to-br from-white via-white to-[#f8f9fb] shadow-[0_20px_60px_rgba(3,18,39,0.08)]">
-          <div className="grid items-center gap-10 px-6 py-8 md:grid-cols-[1.1fr_1.4fr] md:px-10 md:py-10 lg:px-14">
-            <motion.div variants={itemVariants} className="max-w-xl">
-              <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-sm font-semibold tracking-[0.18em] text-[#da1f27] uppercase">
+        <div className="overflow-hidden rounded-[36px] border border-[#173760]/8 bg-gradient-to-br from-white via-white to-[#f8f9fb] shadow-[0_30px_90px_rgba(23,55,96,0.08)]">
+          <div className="flex flex-col gap-10 px-6 py-10 md:px-10 lg:px-14 lg:py-14">
+            <motion.div variants={itemVariants}>
+              <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-[#da1f27] uppercase">
                 Trusted Credentials
               </span>
-
-              <h2 className="mt-4 text-2xl font-bold leading-tight text-[#031227] sm:text-3xl lg:text-4xl">
-                Affiliated for reliable electrical work
-              </h2>
-
-              <p className="mt-4 text-sm leading-7 text-[#031227]/70 sm:text-base">
-                Our work aligns with recognized associations and industry
-                standards, helping clients feel confident in the safety,
-                quality, and reliability of every installation and service.
-              </p>
             </motion.div>
 
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-0"
+              className="grid grid-cols-1 gap-5 sm:grid-cols-3"
             >
-              {associations.map((association, i) => (
+              {associations.map((association, index) => (
                 <motion.div
                   key={association.id}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  transition={{ duration: 0.25 }}
-                  className={`flex h-full min-h-45 items-center justify-center px-6 py-8 md:min-h-55 ${
-                    i !== associations.length - 1
-                      ? "sm:border-r sm:border-[#031227]/10"
-                      : ""
-                  }`}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ duration: 0.28 }}
+                  className="group relative flex min-h-[230px] flex-col items-center justify-center overflow-hidden rounded-[28px] border border-[#173760]/8 bg-white px-6 py-8 shadow-[0_16px_40px_rgba(23,55,96,0.06)] transition-all duration-300 hover:border-[#da1f27]/18 hover:shadow-[0_22px_60px_rgba(23,55,96,0.12)]"
                 >
-                  <div className="flex flex-col items-center gap-4 text-center">
-                    <img
-                      src={association.logo}
-                      alt={association.alt}
-                      className={`${i === 1 ? "max-h-36" : "max-h-24"} w-auto object-contain transition-transform duration-300 hover:scale-105 sm:max-h-28 md:max-h-32 lg:max-h-36`}
-                    />
+                  <div className="absolute inset-x-0 top-0 h-1 bg-[#da1f27]" />
 
-                    <p>{association.content}</p>
-                  </div>
+                  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#da1f27]/6 blur-2xl transition duration-500 group-hover:bg-[#da1f27]/10" />
+
+                  <img
+                    src={association.logo}
+                    alt={association.alt}
+                    className={`relative z-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105 ${
+                      index === 1
+                        ? "max-h-32 sm:max-h-36"
+                        : "max-h-20 sm:max-h-24"
+                    }`}
+                  />
+
+                  {association.content ? (
+                    <p className="relative z-10 mt-5 text-center text-sm font-semibold tracking-wide text-[#173760]/72">
+                      {association.content}
+                    </p>
+                  ) : (
+                    <div className="mt-5 h-[20px]" />
+                  )}
                 </motion.div>
               ))}
             </motion.div>

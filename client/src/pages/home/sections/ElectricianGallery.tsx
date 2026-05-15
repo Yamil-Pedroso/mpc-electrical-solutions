@@ -348,9 +348,9 @@ export default function ElectricianGallery({
               <span className="inline-flex rounded-full bg-[#da1f27]/10 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-[#da1f27] uppercase">
                 Gallery
               </span>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#051a37] sm:text-5xl">
+              {/*<h2 className="mt-4 text-4xl font-bold tracking-tight text-[#051a37] sm:text-5xl">
                 Real electrical projects, clearly showcased.
-              </h2>
+              </h2>*/}
               <p className="mt-4 text-base leading-7 text-[#051a37]/75">
                 Explore our gallery of residential electrical work, showcasing
                 our commitment to quality and professionalism in every project
