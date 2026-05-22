@@ -4,6 +4,7 @@ import WelcomeToast from "@/components/common/WelcomeToast";
 import { Toaster } from "sonner";
 import ServiceAssistantBubble from "@/components/common/ServiceAssistantBubble";
 import Seo from "@/components/common/SEO";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -19,6 +20,7 @@ function Home() {
         keywords="Toronto electrician, electrical services Toronto, emergency electrician Toronto, residential electrician Toronto, commercial electrician Toronto"
         ogImage="https://www.mpcelectricalsolutions.com/og-image.jpg"
       />
+      <LocalBusinessSchema />
       <ServiceAssistantBubble />
       <Toaster position="top-right" richColors />
       <WelcomeToast />

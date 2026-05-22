@@ -86,7 +86,7 @@ export default function TrustedAssociations() {
                   key={association.id}
                   whileHover={{ y: -6, scale: 1.02 }}
                   transition={{ duration: 0.28 }}
-                  className="group relative flex min-h-[230px] flex-col items-center justify-center overflow-hidden rounded-[28px] border border-[#173760]/8 bg-white px-6 py-8 shadow-[0_16px_40px_rgba(23,55,96,0.06)] transition-all duration-300 hover:border-[#da1f27]/18 hover:shadow-[0_22px_60px_rgba(23,55,96,0.12)]"
+                  className="group relative flex min-h-57.5 flex-col items-center justify-center overflow-hidden rounded-[28px] border border-[#173760]/8 bg-white px-6 py-8 shadow-[0_16px_40px_rgba(23,55,96,0.06)] transition-all duration-300 hover:border-[#da1f27]/18 hover:shadow-[0_22px_60px_rgba(23,55,96,0.12)]"
                 >
                   <div className="absolute inset-x-0 top-0 h-1 bg-[#da1f27]" />
 
