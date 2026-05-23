@@ -140,12 +140,12 @@ const Navbar = () => {
         <a
           href="/"
           onClick={handleGoTop}
-          className="flex items-center bg-white p-8 duration-300 xl:rounded-full -m-8"
+          className="flex items-center bg-white p-8 duration-300 xl:rounded-full -m-8 hover:scale-105"
         >
           <img
-            src={assets.logo}
+            src={assets.mpc}
             alt="MPC Electrical Solutions logo"
-            className="h-36 w-auto"
+            className="h-20 lg:h-22 w-auto brightness-110"
           />
         </a>
 
@@ -232,9 +232,9 @@ const Navbar = () => {
             <div className="flex h-20 items-center justify-between px-4">
               <div className="flex h-20 items-center justify-center overflow-hidden bg-white p-4">
                 <img
-                  src={assets.logo}
+                  src={assets.mpc}
                   alt="MPC Electrical Solutions logo"
-                  className="h-30 w-auto object-cover"
+                  className="h-20 w-auto object-cover brightness-110"
                 />
               </div>
 

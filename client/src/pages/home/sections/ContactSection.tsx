@@ -330,9 +330,14 @@ export default function ContactSection() {
                     <p className="text-sm font-semibold text-[#051a37]">
                       Email
                     </p>
-                    <p className="mt-1 text-sm text-[#051a37]/68">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=mpcelectricalsolutions@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#051a37]/68 transition hover:text-[#051a37]"
+                    >
                       mpcelectricalsolutions@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </a>
 
@@ -347,7 +352,7 @@ export default function ContactSection() {
                     <p className="text-sm font-semibold text-[#051a37]">
                       Phone
                     </p>
-                    <p className="mt-1 text-sm text-[#051a37]/68">
+                    <p className="mt-1 text-sm text-[#051a37]/68 transition hover:text-[#051a37]">
                       +1 (647) 460-0292
                     </p>
                   </div>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FiStar, FiArrowRight } from "react-icons/fi";
-import Tooltip from "@/components/common/Tooltip";
 
 const Testimonial = () => {
   return (
@@ -18,7 +17,7 @@ const Testimonial = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center"
         >
-          <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] text-[#da1f27] uppercase">
+          <span className="inline-flex rounded-full border border-[#da1f27]/15 bg-[#da1f27]/8 px-4 py-1.5 text-xs font-semibold tracking-[0.22em] uppercase text-[#da1f27]">
             Testimonials
           </span>
 
@@ -52,22 +51,35 @@ const Testimonial = () => {
           </blockquote>
 
           <div className="mt-7 text-center">
-            <p className="text-sm font-bold text-[#173760]">Name Lastname.</p>
+            <p className="text-sm font-bold text-[#173760]">Name Lastname</p>
+
             <p className="mt-1 text-sm text-[#173760]/60">
               Homeowner in Toronto
             </p>
           </div>
 
-          <div className="mt-8 flex justify-center">
-            <Tooltip title="Content in development" position="top">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#da1f27] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(218,31,39,0.22)] transition duration-300 hover:scale-[1.02] hover:bg-[#bf1820]"
-              >
-                Read more testimonials
-                <FiArrowRight />
-              </a>
-            </Tooltip>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {/* Read Reviews */}
+            <a
+              href="https://www.google.com/maps/place/MPC+Electrical+Solutions/@43.7182412,-79.3780581,11z/data=!4m8!3m7!1s0x5da68acac7d7387:0xc664908c55feb267!8m2!3d43.7182412!4d-79.3780581!9m1!1b1!16s%2Fg%2F11njpn26wc?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#da1f27] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(218,31,39,0.22)] transition duration-300 hover:scale-[1.02] hover:bg-[#bf1820]"
+            >
+              Read Google Reviews
+              <FiArrowRight />
+            </a>
+
+            {/* Leave Review */}
+            <a
+              href="https://g.page/r/CWey_lWMkGTGEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#173760]/15 bg-white px-6 py-3.5 text-sm font-semibold text-[#173760] transition duration-300 hover:scale-[1.02] hover:border-[#173760]/30 hover:bg-[#173760]/5"
+            >
+              Leave a Review
+              <FiArrowRight />
+            </a>
           </div>
         </motion.div>
       </div>

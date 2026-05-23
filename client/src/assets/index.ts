@@ -1,4 +1,5 @@
 import logo from "./images/Logo.svg";
+import mpc from "./images/mpc_1.jpg";
 
 // Hero
 import micheElectrical from "./images/hero-section/miche-elec.png";
@@ -46,6 +47,7 @@ interface Assets {
 
 const assets: Assets = {
   logo,
+  mpc,
   char,
   micheElectrical,
   electrician,

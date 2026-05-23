@@ -53,7 +53,14 @@ const TopBar = () => {
             className="flex items-center gap-2 text-sm text-white/80 transition hover:text-white"
           >
             <FiMail className="text-[#da1f27]" />
-            <span>mpcelectricalsolutions@gmail.com</span>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=mpcelectricalsolutions@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[#ffffff]"
+            >
+              mpcelectricalsolutions@gmail.com
+            </a>
           </motion.a>
         </motion.div>
 
@@ -79,34 +86,6 @@ const TopBar = () => {
             <FiMapPin className="text-[#da1f27]" />
             <span>Toronto and the GTA</span>
           </motion.div>
-          {/*<motion.span
-            variants={itemVariants}
-            className="text-xs font-medium tracking-[0.2em] text-white/45 uppercase"
-          >
-            Follow us
-          </motion.span>
-
-          <Tooltip title="Pending..." position="bottom">
-            <motion.a
-              variants={itemVariants}
-              href="#"
-              aria-label="?"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition duration-300 hover:border-[#da1f27]/30 hover:bg-[#da1f27] hover:text-white"
-            >
-              ?
-            </motion.a>
-          </Tooltip>
-
-          <Tooltip title="Pending..." position="bottom">
-            <motion.a
-              variants={itemVariants}
-              href="#"
-              aria-label="?"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/75 transition duration-300 hover:border-[#da1f27]/30 hover:bg-[#da1f27] hover:text-white"
-            >
-              ?
-            </motion.a>
-          </Tooltip> */}
         </motion.div>
       </div>
     </motion.div>

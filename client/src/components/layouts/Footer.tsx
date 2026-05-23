@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div className="">
-            <div className="mb-4 flex justify-center items-center w-36 h-36 rounded-full bg-white">
+            <div className="mb-4 flex justify-center items-center w-36 h-36 rounded-full bg-white overflow-hidden">
               <img
-                src={assets.logo}
+                src={assets.mpc}
                 alt="MPC Electrical Solutions logo"
-                className=" h-28 w-auto"
+                className="h-16  w-auto brightness-110"
               />
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
