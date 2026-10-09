@@ -91,7 +91,7 @@ function SubmissionSuccessModal({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-[#051a37]/78 px-4 py-4 backdrop-blur-md"
+          className="fixed inset-0 z-999 flex items-center justify-center bg-[#051a37]/78 px-4 py-4 backdrop-blur-md"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -99,7 +99,7 @@ function SubmissionSuccessModal({
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-xl overflow-hidden rounded-[32px] border border-white/10 bg-white shadow-[0_35px_120px_rgba(5,26,55,0.32)]"
+            className="relative w-full max-w-xl overflow-hidden rounded-4xl border border-white/10 bg-white shadow-[0_35px_120px_rgba(5,26,55,0.32)]"
             initial={{ opacity: 0, y: 32, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -127,7 +127,7 @@ function SubmissionSuccessModal({
                 transition={{ delay: 0.08, duration: 0.4 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="flex h-24 w-24 items-center justify-center rounded-[24px] bg-[#f7f8fb] p-4 shadow-inner">
+                <div className="flex h-24 w-24 items-center justify-center rounded-3xl bg-[#f7f8fb] p-4 shadow-inner">
                   <img
                     src={assets.logo}
                     alt="MPC Electrical Solutions logo"

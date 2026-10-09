@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import ServiceAssistantBubble from "@/components/common/ServiceAssistantBubble";
 import Seo from "@/components/common/SEO";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+//import CookieConsent from "@/components/common/CookieConsent";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -24,7 +25,7 @@ function Home() {
       <ServiceAssistantBubble />
       <Toaster position="top-right" richColors />
       <WelcomeToast />
-
+      {/*<CookieConsent />*/}
       <HomePage />
     </>
   );

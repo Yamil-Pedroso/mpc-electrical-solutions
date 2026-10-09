@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { FiMail, FiMapPin, FiMenu, FiPhone, FiX } from "react-icons/fi";
-import { assets } from "@/assets";
+// import { assets } from "@/assets"; // Restore for the original static logos.
+import AnimatedLogo from "@/components/common/AnimatedLogo";
 import { menuItems } from "@/data/menuItemsData";
 import Button from "@/components/ui/Button";
 //import Tooltip from "@/components/common/Tooltip";
@@ -142,11 +143,12 @@ const Navbar = () => {
           onClick={handleGoTop}
           className="flex items-center bg-white p-8 duration-300 xl:rounded-full -m-8 hover:scale-105"
         >
-          <img
+          <AnimatedLogo />
+          {/* <img
             src={assets.mpc}
             alt="MPC Electrical Solutions logo"
             className="h-20 lg:h-22 w-auto brightness-110"
-          />
+          /> */}
         </a>
 
         <nav className="hidden items-center gap-10 md:flex">
@@ -231,11 +233,12 @@ const Navbar = () => {
           >
             <div className="flex h-20 items-center justify-between px-4">
               <div className="flex h-20 items-center justify-center overflow-hidden bg-white p-4">
-                <img
+                <AnimatedLogo />
+                {/* <img
                   src={assets.mpc}
                   alt="MPC Electrical Solutions logo"
                   className="h-20 w-auto object-cover brightness-110"
-                />
+                /> */}
               </div>
 
               <button
