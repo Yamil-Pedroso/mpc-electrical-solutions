@@ -98,9 +98,13 @@ export default function AnimatedLogo({ className = "" }: AnimatedLogoProps) {
         src={assets.mpc}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 h-full w-full object-contain brightness-110 ${rive ? "invisible" : ""}`}
+        className={`absolute inset-0 h-full w-full object-contain brightness-110 transition-opacity duration-500 ease-out motion-reduce:transition-none ${rive ? "opacity-0" : "opacity-100"}`}
       />
-      <canvas ref={setCanvasRef} className="absolute inset-0 h-full w-full pointer-events-none" aria-hidden="true" />
+      <canvas
+        ref={setCanvasRef}
+        className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-500 ease-out motion-reduce:transition-none ${rive ? "opacity-100" : "opacity-0"}`}
+        aria-hidden="true"
+      />
     </div>
   );
 }

@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/logo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Start fetching Rive before the application mounts the Navbar. -->
+    <link
+      rel="preload"
+      as="fetch"
+      type="application/wasm"
+      crossorigin
+      href="/node_modules/@rive-app/webgl2/rive.wasm"
+    />
+    <link
+      rel="preload"
+      as="fetch"
+      crossorigin
+      href="/src/assets/animations/rive/mpc-es.riv"
+    />
     <title>MPC Electrical Solutions</title>
     <meta name="description" content="Professional electrical services." />
   </head>
